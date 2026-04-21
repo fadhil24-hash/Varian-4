@@ -41,4 +41,38 @@ public class Movie {
         Movie movie = (Movie) obj;
         return Objects.equals(title, movie.title);
     }
+    
+      public static class Schedule {
+        private String studio;
+        private String showTime;
+        private LocalDate showDate;
+
+        public Schedule(String studio, String showTime, LocalDate showDate) {
+            this.studio = studio.trim();
+            this.showTime = showTime.trim();
+            this.showDate = showDate;
+        }
+
+        public String getStudio() {
+            return studio;
+        }
+
+        public String getShowTime() {
+            return showTime;
+        }
+
+        public LocalDate getShowDate() {
+            return showDate;
+        }
+
+        @Override
+        public String toString() {
+            DateTimeFormatter formatter =
+                    DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+            return "Studio: " + studio +
+                    " | Time: " + showTime +
+                    " | Date: " + showDate.format(formatter);
+        }
+    }
 }
