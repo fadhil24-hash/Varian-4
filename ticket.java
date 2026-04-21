@@ -1,3 +1,5 @@
+package models;
+
 import enums.Status;
 import enums.Type;
 
