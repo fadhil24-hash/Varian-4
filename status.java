@@ -1,3 +1,5 @@
+packages enums;
+
 public enum Status {
     AVAILABLE, 
     BOOKED,    
