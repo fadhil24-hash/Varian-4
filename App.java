@@ -73,7 +73,7 @@ public class App {
         try {
             LocalDateTime dateTime = parseDateTime(inputDate);
 
-            // 🔥 VALIDASI WAKTU (WAJIB)
+            // =====WAKTU=====
             if (dateTime.isBefore(LocalDateTime.now())) {
                 System.out.println("Tidak bisa menambahkan jadwal di masa lalu.");
                 return;
