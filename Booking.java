@@ -7,19 +7,19 @@ public class Booking {
     private String    customerName;
     private Movie     movie;
     private Ticket    ticket;
-    private LocalDate bookingDate;  // Date & Time API
+    private LocalDate bookingDate;
 
     public Booking(String customerName, Movie movie, Ticket ticket) {
         this.customerName = customerName.trim();
         this.movie        = movie;
         this.ticket       = ticket;
-        this.bookingDate  = LocalDate.now(); // otomatis isi tanggal saat booking
+        this.bookingDate  = LocalDate.now();
     }
 
     public String    getCustomerName() { return customerName; }
     public Movie     getMovie()        { return movie; }
     public Ticket    getTicket()       { return ticket; }
-    public LocalDate getBookingDate()  { return bookingDate; } // ← tambahan getter
+    public LocalDate getBookingDate()  { return bookingDate; }
 
     @Override
     public String toString() {
