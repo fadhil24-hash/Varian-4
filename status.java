@@ -1,4 +1,4 @@
-packages enums;
+package enums;
 
 public enum Status {
     AVAILABLE, 
