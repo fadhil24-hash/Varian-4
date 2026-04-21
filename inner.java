@@ -1,40 +1,24 @@
-public static class Schedule {
-        private String time;
-        private String type; // VIP atau Regular
-        private int capacity;
-        private int bookedSeats;
-        private double price;
+public class OuterClass {
+    // Movie inner class
+    public static class Movie {
+        private String title;
+        private String director;
+        private int releaseYear;
 
-        public Schedule(String time, String type, int capacity) {
-            this.time = time;
-            this.type = type;
-            this.capacity = capacity;
-            this.bookedSeats = 0;
-            // Level Upgrade: Harga berbeda
-            this.price = type.equalsIgnoreCase("VIP") ? 100000 : 50000;
+        public Movie(String title, String director, int releaseYear) {
+            this.title = title;
+            this.director = director;
+            this.releaseYear = releaseYear;
         }
 
-        public boolean bookTicket(int count) {
-            // Level Upgrade: Seat terbatas & Tidak bisa booking jika full
-            if (bookedSeats + count <= capacity) {
-                bookedSeats += count;
-                return true;
-            }
-            return false;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("[%s] Tipe: %s | Harga: Rp%,.0f | Sisa Kursi: %d/%d", 
-                                  time, type, price, (capacity - bookedSeats), capacity);
-        }
+        // Getters
+        public String getTitle() { return title; }
+        public String getDirector() { return director; }
+        public int getReleaseYear() { return releaseYear; }
     }
+
+    // Other methods for OuterClass...
 }
-
-public class MovieBookingSystem {
-    private static ArrayList<Movie> movieList = new ArrayList<>();
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         while (true) {
             System.out.println("\n--- MOVIE BOOKING SYSTEM (ADVANCED) ---");
@@ -57,3 +41,4 @@ public class MovieBookingSystem {
             }
         }
     }
+
